@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="./Style.css">
+        <title>Properties</title>
+    </head>
+    <body onload="GetPage()" >
+        <nav class="nav">
+            <div class="LogoSec">
+                <img src="./assets/svu-logo.png" alt="" srcset="">
+            </div>
+            <div class="MenuSec">
+                <a href="./index.html">Home</a>
+                <a href="./Properties.html">Properties</a>
+                <a href="./AboutUs.html">About Us</a>
+            </div>
+        </nav>
+        <div id="#content" data-content="Properties">
+            <div id="tableContainer"></div>        
+        </div>
+        <div id="property-form" class="property-form">
+            <h3 dir="rtl">نموذج طلب</h3>
+            <form id="application-form" dir="rtl">
+            <label for="fullname">الاسم الكامل:</label>
+            <input type="text" id="fullname" name="fullname" pattern="^[\u0621-\u064A\s]+$" title="أحرف هجائية فقط باللغة العربية" placeholder="الاسم الكامل">
+           
+                
+            <label for="national-id">الرقم الوطني:</label>
+            <input type="text" id="national-id" name="national-id" pattern="^(0[1-9]|1[0-4])[0-9]{9}$" title="الرقم الوطني المكون من 11 خانة" placeholder="0(1-9)" required>
+            
+        
+            <label for="dob">تاريخ الميلاد:</label>
+            <input type="date" id="dob" name="dob" placeholder="yyyy-mm-dd">
+            
+        
+            <label for="mobile">رقم الموبايل:</label>
+            <input type="tel" id="mobile" name="mobile" pattern="^(09(3[3-9]|4[4-9]|5[0-9]|9[0-9])\d{6})$" title="رقم الموبايل لشبكتي Syriatel و MTN" placeholder=" 09(3/4/5/9)رقم الموبايل">
+            
+        
+            <label for="email">الإيميل:</label>
+            <input type="email" id="email" name="email" placeholder="ex@ex.com">
+           
+            <div id="captcha-container">
+                <label for="captcha">رمز التحقق:</label>
+                <button type="button" id="button-captcha" onclick="refreshCaptcha()">تحديث الرمز</button>
+                <span id="captcha-code"></span>
+                <input type="text" id="captcha-input" name="captcha" placeholder="ادخل الكود">
+               
+            </div>
+                         
+            <button type="submit" id="send" >إرسال</button>
+            <button type="button" onclick="closeForm()">إغلاق</button>
+        </form>
+        </div>
+        <div id="popup-message" class="popup-message">
+            <span id="popup-text"></span>
+            <button onclick="closePopup()">إغلاق</button>
+        </div>
+        <section class="section-button">
+            <button onclick="showForm()" class="show-button"> متابعة</button>
+        </section>
+    
+        
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="./myFunctions.js"></script>
+    </body>
+</html>
